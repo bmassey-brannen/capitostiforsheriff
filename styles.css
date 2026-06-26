@@ -776,10 +776,10 @@ h3 {
   }
 
   .platform-photo img {
-    height: auto;
+    height: clamp(420px, 82vw, 620px);
     min-height: 0;
-    aspect-ratio: 4 / 5;
     object-fit: cover;
+    object-position: center 18%;
   }
 
   .events-grid {
