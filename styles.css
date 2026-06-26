@@ -155,7 +155,7 @@ h1,
 h2,
 h3,
 p {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -750,6 +750,9 @@ h3 {
 @media (max-width: 960px) {
   .hero {
     min-height: auto;
+    background:
+      linear-gradient(90deg, rgba(16, 39, 71, 0.96) 0%, rgba(16, 39, 71, 0.86) 100%),
+      url("images/waving-flag.jpg") center/cover no-repeat;
   }
 
   .hero-grid,
@@ -758,6 +761,17 @@ h3 {
   .involved-grid,
   .closing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .section-heading {
+    max-width: 720px;
+  }
+
+  .hero-headshot,
+  .single-campaign-photo {
+    width: min(100%, 360px);
+    justify-self: center;
   }
 
   .platform-photo img {
@@ -770,6 +784,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .event-card {
+    min-height: auto;
+  }
+
   .donate-grid {
     grid-template-columns: 1fr;
   }
@@ -778,11 +796,11 @@ h3 {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-
 }
 
 @media (max-width: 780px) {
   .header-inner {
+    min-height: 66px;
     flex-wrap: wrap;
   }
 
@@ -809,7 +827,24 @@ h3 {
   }
 
   .hero {
-    padding: 42px 0 64px;
+    padding: 34px 0 46px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2.25rem, 11vw, 3.5rem);
+    line-height: 1.02;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 9vw, 2.8rem);
+  }
+
+  .hero-lede {
+    font-size: 1rem;
   }
 
   .platform-cards {
@@ -821,7 +856,57 @@ h3 {
   }
 
   .section {
-    padding: 56px 0;
+    padding: 48px 0;
+  }
+
+  .intro-grid,
+  .platform-layout,
+  .involved-grid,
+  .closing-grid {
+    gap: 28px;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+
+  .platform-pledge {
+    padding: 18px;
+    font-size: 1rem;
+  }
+
+  .gallery-section {
+    padding: 26px 18px 34px;
+  }
+
+  .gallery-carousel {
+    max-width: 520px;
+  }
+
+  .gallery-track {
+    width: 1000%;
+  }
+
+  .gallery-slide {
+    flex-basis: 10%;
+    padding: 0;
+  }
+
+  .gallery-slide img {
+    height: clamp(280px, 74vw, 420px);
+  }
+
+  .donate-section {
+    padding: 30px 0;
+  }
+
+  .donate-graphic {
+    width: min(100%, 390px);
+    justify-self: center;
+  }
+
+  .compliance-strip {
+    padding: 22px 0;
   }
 
   .footer-inner {
@@ -833,11 +918,25 @@ h3 {
 
 @media (max-width: 520px) {
   .container {
-    padding: 0 18px;
+    padding: 0 16px;
   }
 
   .brand {
     min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.66rem;
+    letter-spacing: 0.13em;
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px;
   }
 
   .hero-actions,
@@ -848,19 +947,55 @@ h3 {
 
   .button {
     width: 100%;
+    min-height: 44px;
   }
 
   .info-card,
   .event-card,
   .contact-form {
-    padding: 20px;
+    padding: 18px;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
   }
 
+  .hero-headshot,
+  .single-campaign-photo {
+    width: min(100%, 310px);
+  }
+
+  .section-label,
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .action-list {
+    margin: 18px 0;
+  }
+
+  .donation-legal-grid {
+    gap: 12px;
+  }
+
+  .donation-legal-grid p,
+  .compliance-strip p,
+  .footer-inner p {
+    font-size: 0.82rem;
+  }
+
   .donate-graphic {
     max-width: 360px;
+  }
+
+  .footer-links {
+    width: 100%;
+  }
+
+  .footer-links .button,
+  .footer-link {
+    width: 100%;
+    text-align: center;
   }
 }
